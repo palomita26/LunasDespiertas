@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HamburgerMenu from "./components/HamburgerMenu";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./utils/nextAuth";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
