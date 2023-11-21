@@ -3,7 +3,11 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 
-export default function HamburgerMenu() {
+type Props = {
+  isAdmin: boolean;
+};
+
+export default function HamburgerMenu({ isAdmin }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -18,20 +22,20 @@ export default function HamburgerMenu() {
             <path
               d="M4 18L20 18"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
             <path
               d="M4 12L20 12"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
             <path
               d="M4 6L20 6"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
         </button>
@@ -54,9 +58,11 @@ export default function HamburgerMenu() {
           <DropdownMenu.Item className="py-2 text-center">
             <Link href="/shop"> Shop </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-2 text-center">
-            <Link href="/admin"> Admin </Link>
-          </DropdownMenu.Item>
+          {isAdmin ? (
+            <DropdownMenu.Item className="py-2 text-center">
+              <Link href="/admin"> Admin </Link>
+            </DropdownMenu.Item>
+          ) : null}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
