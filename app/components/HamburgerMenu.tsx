@@ -11,29 +11,29 @@ export default function HamburgerMenu({ isAdmin }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="" aria-label="Customise options">
+        <button className="text-gold" aria-label="Customise options">
           <svg
             width="35px"
             height="35px"
             viewBox="0 0 24 24"
-            fill="white"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M4 18L20 18"
-              stroke="white"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
             />
             <path
               d="M4 12L20 12"
-              stroke="white"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
             />
             <path
               d="M4 6L20 6"
-              stroke="white"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
             />
@@ -50,7 +50,7 @@ export default function HamburgerMenu({ isAdmin }: Props) {
             <Link href="/about"> About </Link>
           </DropdownMenu.Item>
           <DropdownMenu.Item className="py-2 text-center">
-            <Link href="/offerings"> Offerings </Link>
+            <Link href="/services"> Services </Link>
           </DropdownMenu.Item>
           <DropdownMenu.Item className="py-2 text-center">
             <Link href="/blog"> Blog </Link>
