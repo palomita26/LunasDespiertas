@@ -14,7 +14,10 @@ export default async function Blog() {
 
       <div>
         {blogs.map((blog) => (
-          <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-24 my-10 rounded-sm">
+          <div
+            key={blog.key}
+            className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-24 my-10 rounded-sm"
+          >
             <h2>{blog.title}</h2>
             <p>{blog.createdAt.toLocaleString()}</p>
             <p>{blog.content?.toString()}</p>
