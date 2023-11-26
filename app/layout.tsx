@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./utils/nextAuth";
 import Image from "next/image";
 import ShoppingCartIcon from "./components/icons/ShoppingCart";
+import { Toaster } from "react-hot-toast";
 
 const madi = Ms_Madi({
   subsets: ["latin"],
@@ -31,8 +32,10 @@ export default async function RootLayout({
   console.log({ session });
   return (
     <html lang="en">
-      <body className={libre.className}>
-        <header className="flex navbar-gradient h-[60px] items-center px-5 justify-between sticky top-0">
+      <body className={`${libre.className}`}>
+        <Toaster />
+
+        <header className="flex navbar-gradient h-[60px] items-center px-5 justify-between sticky top-0 z-50">
           <div className="flex items-center">
             <Link href="/">
               <Image
@@ -81,6 +84,7 @@ export default async function RootLayout({
             </Link>
           </div>
         </header>
+        <div className="h-[60px] sticky top-0 z-2 bg-white relative" />
 
         {children}
       </body>
