@@ -11,7 +11,7 @@ export default function HamburgerMenu({ isAdmin }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="text-gold" aria-label="Customise options">
+        <button className="text-[#AC585A]" aria-label="Customise options">
           <svg
             width="35px"
             height="35px"
@@ -43,7 +43,7 @@ export default function HamburgerMenu({ isAdmin }: Props) {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="bg-gray-800 p-4 text-white"
+          className="bg-[#C78F90] p-4 text-white rounded-sm"
           sideOffset={10}
         >
           <DropdownMenu.Item className="py-2 text-center">

@@ -21,11 +21,12 @@ export default async function BlogPost({
   return blog && blogContent ? (
     <div className="pt-10">
       <div>
-        <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-24 my-10 rounded-sm">
+        <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-8 my-10 sm:mx-24 rounded-sm ">
           <h2>{blog.title}</h2>
           <p>{blog.createdAt.toLocaleString()}</p>
-          <p>{blog.content?.toString()}</p>
-          <div dangerouslySetInnerHTML={{ __html: blogContent }}></div>
+          {blogContent?.map((block) => (
+            <div dangerouslySetInnerHTML={{ __html: block }} />
+          ))}
         </div>
       </div>
     </div>
