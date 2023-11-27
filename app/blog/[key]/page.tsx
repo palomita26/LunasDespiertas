@@ -25,7 +25,7 @@ export default async function BlogPost({
           <h2>{blog.title}</h2>
           <p>{blog.createdAt.toLocaleString()}</p>
           {blogContent?.map((block) => (
-            <div dangerouslySetInnerHTML={{ __html: block }} />
+            <div key={block} dangerouslySetInnerHTML={{ __html: block }} />
           ))}
         </div>
       </div>
