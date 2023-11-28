@@ -10,17 +10,19 @@ export default async function Blog() {
 
   return (
     <div className="pt-10">
-      <p className="text-center">Blog Page</p>
+      <h1 className="text-center tracking-[.4em] text-shadow shadow-black/25">
+        Mente Lunar
+      </h1>
 
       <div>
         {blogs.map((blog) => (
           <div
             key={blog.key}
-            className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-24 my-10 rounded-sm"
+            className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-8 sm:mx-32 my-10 rounded-sm"
           >
             <h2>{blog.title}</h2>
             <p>{blog.createdAt.toLocaleString()}</p>
-            <p>{blog.content?.toString()}</p>
+            <p>{blog.description?.toString()}</p>
             <div className="text-right">
               <Link
                 className="hover:bg-gray-300 p-3"
