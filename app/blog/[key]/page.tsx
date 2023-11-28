@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 import edjsHTML from "editorjs-html";
 import { OutputData } from "@editorjs/editorjs";
 import React from "react";
+import prisma from "../../../prisma/client";
 
 export default async function BlogPost({
   params,

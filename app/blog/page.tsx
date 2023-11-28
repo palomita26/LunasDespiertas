@@ -10,7 +10,7 @@ export default async function Blog() {
 
   return (
     <div>
-      <h1 className="text-[#73070B] text-center tracking-[.4em] text-shadow shadow-black/25 sm:text-[30px] text-[20px]">
+      <h1 className="text-[#9A090E] text-center tracking-[.4em] text-shadow shadow-black/25 sm:text-[30px] text-[20px] font-bold">
         Mente Lunar
       </h1>
 

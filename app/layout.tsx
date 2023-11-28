@@ -49,7 +49,7 @@ export default async function RootLayout({
             <Link href="/">
               <div className="sm:w-64 pt-4">
                 <p
-                  className={`text-[10px] sm:text-[14px] text-white tracking-[.4em] ${libre.className}`}
+                  className={`text-[10px] sm:text-[14px] text-white tracking-[.4em] text-shadow shadow-black/25 ${libre.className}`}
                 >
                   LUNAS DESPIERTAS
                 </p>

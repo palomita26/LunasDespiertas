@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth/next";
 import { File, Web3Storage } from "web3.storage";
 import { authOptions } from "@/app/utils/nextAuth";
 import { create } from "@web3-storage/w3up-client";
 import { initW3Client } from "@/app/utils/w3StorageUtils";
-
-const prisma = new PrismaClient();
+import prisma from "../../../prisma/client";
 
 export async function GET(req: NextRequest) {
   const blog = await prisma.blog.findMany({
