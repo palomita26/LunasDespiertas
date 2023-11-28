@@ -11,7 +11,7 @@ export default function HamburgerMenu({ isAdmin }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="text-[#AC585A]" aria-label="Customise options">
+        <button className="text-black" aria-label="Customise options">
           <svg
             width="35px"
             height="35px"
@@ -43,23 +43,23 @@ export default function HamburgerMenu({ isAdmin }: Props) {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="bg-[#C78F90] p-4 text-white rounded-sm"
-          sideOffset={10}
+          className="bg-[#73070B] p-4 text-white rounded-sm text-xl w-[150px]"
+          sideOffset={12}
         >
-          <DropdownMenu.Item className="py-2 text-center">
+          <DropdownMenu.Item className="py-3 text-center">
             <Link href="/about"> About </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-2 text-center">
+          <DropdownMenu.Item className="py-3 text-center">
             <Link href="/services"> Services </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-2 text-center">
+          <DropdownMenu.Item className="py-3 text-center">
             <Link href="/blog"> Blog </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-2 text-center">
+          <DropdownMenu.Item className="py-3 text-center">
             <Link href="/shop"> Shop </Link>
           </DropdownMenu.Item>
           {isAdmin ? (
-            <DropdownMenu.Item className="py-2 text-center">
+            <DropdownMenu.Item className="py-3 text-center">
               <Link href="/admin"> Admin </Link>
             </DropdownMenu.Item>
           ) : null}

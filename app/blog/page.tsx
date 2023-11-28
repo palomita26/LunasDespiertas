@@ -9,8 +9,8 @@ export default async function Blog() {
   console.log(blogs);
 
   return (
-    <div className="pt-10">
-      <h1 className="text-center tracking-[.4em] text-shadow shadow-black/25">
+    <div>
+      <h1 className="text-[#73070B] text-center tracking-[.4em] text-shadow shadow-black/25 sm:text-[30px] text-[20px]">
         Mente Lunar
       </h1>
 
