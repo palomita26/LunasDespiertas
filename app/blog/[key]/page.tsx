@@ -1,7 +1,9 @@
-import edjsHTML from "editorjs-html";
-import { OutputData } from "@editorjs/editorjs";
-import React from "react";
 import prisma from "../../../prisma/client";
+import { notFound } from "next/navigation";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import { unified } from "unified";
 
 export default async function BlogPost({
   params,
@@ -9,23 +11,25 @@ export default async function BlogPost({
   params: { key: string };
 }) {
   const blog = await prisma.blog.findUnique({
-    where: { key: params.key },
+    where: { key: decodeURI(params.key) },
   });
-  console.log({ blog });
-  const edjsParser = edjsHTML();
-  const blogContent = blog
-    ? edjsParser.parse(JSON.parse(blog.content as string) as OutputData)
-    : null;
-  console.log({ blogContent });
-  return blog && blogContent ? (
+  if (!blog) notFound();
+
+  const content = (
+    await unified()
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeStringify)
+      .process(JSON.parse(blog.content as string))
+  ).toString();
+  return content ? (
     <div className="pt-10">
       <div>
         <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] mx-8 my-10 sm:mx-24 rounded-sm ">
           <h2>{blog.title}</h2>
           <p>{blog.createdAt.toLocaleString()}</p>
-          {blogContent?.map((block) => (
-            <div key={block} dangerouslySetInnerHTML={{ __html: block }} />
-          ))}
+
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </div>
     </div>

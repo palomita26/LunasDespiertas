@@ -128,11 +128,6 @@ export default function Admin() {
           {isLoading ? "Loading . . ." : "Submit"}
         </button>
       </form>
-      {/* <Editor
-        data={content}
-        onChange={setContent}
-        holder="editorjs-container"
-      /> */}
       <MarkdownEditor value={content} onChange={setContent} />
     </div>
   );
