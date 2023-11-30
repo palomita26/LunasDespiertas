@@ -6,7 +6,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
-const Editor = dynamic(() => import("../components/Editor"), {
+const MarkdownEditor = dynamic(() => import("../components/MarkdownEditor"), {
   ssr: false,
 });
 
@@ -18,7 +18,7 @@ type Inputs = {
 };
 
 export default function Admin() {
-  const [content, setContent] = useState<OutputData>();
+  const [content, setContent] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
 
   console.log({ content }, JSON.stringify(content));
@@ -128,11 +128,12 @@ export default function Admin() {
           {isLoading ? "Loading . . ." : "Submit"}
         </button>
       </form>
-      <Editor
+      {/* <Editor
         data={content}
         onChange={setContent}
         holder="editorjs-container"
-      />
+      /> */}
+      <MarkdownEditor value={content} onChange={setContent} />
     </div>
   );
 }
