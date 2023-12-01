@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import type { OutputData } from "@editorjs/editorjs";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -128,7 +127,11 @@ export default function Admin() {
           {isLoading ? "Loading . . ." : "Submit"}
         </button>
       </form>
-      <MarkdownEditor value={content} onChange={setContent} />
+      <MarkdownEditor
+        className="mx-auto"
+        value={content}
+        onChange={setContent}
+      />
     </div>
   );
 }

@@ -2,8 +2,12 @@ import prisma from "../../../prisma/client";
 import { notFound } from "next/navigation";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import rehypeFormat from "rehype-format";
+import remarkGfm from "remark-gfm";
+
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
+import MDEditor from "@uiw/react-md-editor";
 
 export default async function BlogPost({
   params,
@@ -19,6 +23,8 @@ export default async function BlogPost({
     await unified()
       .use(remarkParse)
       .use(remarkRehype)
+      .use(remarkGfm)
+      .use(rehypeFormat)
       .use(rehypeStringify)
       .process(JSON.parse(blog.content as string))
   ).toString();
