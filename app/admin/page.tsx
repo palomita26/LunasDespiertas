@@ -65,42 +65,48 @@ export default function Admin() {
     }
   };
   return (
-    <div>
+    <div className="p-1 lg:p-5">
       <p className="text-center">Admin Page</p>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-3 text-black"
+        className="flex flex-col gap-3 text-black w-full lg:w-[700px] mx-auto border-2 mt-2 rounded-md p-2"
       >
-        <input
+        {/* <input
           className="rounded-sm p-2"
           placeholder="key"
           {...register("key", { required: true })}
-        />
-        {errors.description && (
-          <span className="text-white">This field is required</span>
-        )}
+        /> */}
+        {/* {errors.description && (
+          <span className="text-red-400 text-[12px]">
+            This field is required
+          </span>
+        )} */}
 
         <input
-          className="rounded-sm p-2"
+          className="rounded-sm p-2 border"
           placeholder="title"
           {...register("title", { required: true })}
         />
         {errors.description && (
-          <span className="text-white">This field is required</span>
+          <span className="text-red-400 text-[12px]">
+            This field is required
+          </span>
         )}
 
         <input
-          className="rounded-sm p-2"
+          className="rounded-sm p-2 border"
           placeholder="description"
           {...register("description", { required: true })}
         />
         {errors.description && (
-          <span className="text-white">This field is required</span>
+          <span className="text-red-400 text-[12px]">
+            This field is required
+          </span>
         )}
 
         <label
           htmlFor="file-upload"
-          className="custom-file-upload text-white cursor-pointer bg-gray-400 hove:bg-gray-300 text-center py-1 px-3 rounded-full w-fit mx-auto mt-3"
+          className="custom-file-upload text-white cursor-pointer bg-gray-400 hove:bg-gray-300 text-center py-1 px-3 rounded-sm w-fit mx-auto mt-3"
         >
           Choose File
         </label>
@@ -114,7 +120,9 @@ export default function Admin() {
           })}
         />
         {errors.image && (
-          <span className="text-white">This field is required</span>
+          <span className="text-red-400 text-[12px] text-center">
+            This field is required
+          </span>
         )}
 
         {inputs.image?.length ? (
@@ -128,7 +136,7 @@ export default function Admin() {
         </button>
       </form>
       <MarkdownEditor
-        className="mx-auto"
+        className="mx-auto mt-3"
         value={content}
         onChange={setContent}
       />

@@ -39,7 +39,7 @@ export default async function RootLayout({
           <div className="flex items-center">
             <Link href="/">
               <Image
-                className="relative top-8 w-16 h-16 sm:w-[100px] sm:h-[100px]"
+                className="relative top-6 sm:top-8 w-[72px] h-[72px] sm:w-[100px] sm:h-[100px]"
                 src="/LD-Logo.png"
                 height={100}
                 width={100}
@@ -47,24 +47,24 @@ export default async function RootLayout({
               />
             </Link>
             <Link href="/">
-              <div className="sm:w-64 pt-4">
+              <div className="sm:w-64 pt-1 text:center sm:text-left">
                 <p
-                  className={`text-[10px] sm:text-[14px] text-white tracking-[.4em] text-shadow shadow-black/25 ${libre.className}`}
+                  className={`text-[10px] sm:text-[14px] text-white tracking-[.4em] text-shadow shadow-black/25 pl-3 sm:pl-2 ${libre.className}`}
                 >
                   LUNAS DESPIERTAS
                 </p>
-                <p
-                  className={`text-[12px] sm:text-sm pl-12 tracking-[.1em] ${madi.className}`}
+                {/* <p
+                  className={`text-[12px] sm:text-sm pl-12 tracking-[.1em] text-white ${madi.className}`}
                 >
                   By Ana-Maria Colberg
-                </p>
+                </p> */}
               </div>
             </Link>
           </div>
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <HamburgerMenu isAdmin={Boolean(session?.user.isAdmin)} />
           </div>
-          <div className="hidden md:flex gap-7 justify-end text-gold text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
+          <div className="hidden lg:flex gap-7 justify-end text-gold text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
             <Link href="/about">about</Link>
             <Link href="/services">services</Link>
             <Link href="/blog">blog</Link>
@@ -84,7 +84,7 @@ export default async function RootLayout({
             </Link>
           </div>
         </header>
-        <div className="h-[60px] sticky top-0 z-2 bg-white relative" />
+        <div className="h-[60px] sticky top-0 z-10 bg-white relative" />
 
         {children}
       </body>

@@ -14,20 +14,28 @@ body {
 
 .navbar-gradient {
   background: linear-gradient(
-    91.96deg,
+    /* 91.96deg,
     #b79b5c 31.24%,
     rgba(183, 155, 92, 0.431054) 41.02%,
-    rgba(183, 155, 92, 0) 52.34%
+    rgba(183, 155, 92, 0) 52.34% */
+      90.9deg,
+    #9a090e 7.58%,
+    #b79b5c 35.67%,
+    rgba(171, 157, 151, 0) 63.44%
   );
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   .navbar-gradient {
     background: linear-gradient(
-      86.38deg,
+      /* 86.38deg,
       #b79b5c 62.5%,
       rgba(183, 155, 92, 0.431054) 73.53%,
-      rgba(183, 155, 92, 0) 86.3%
+      rgba(183, 155, 92, 0) 86.3% */
+        80.38deg,
+      #9a090e 25.21%,
+      rgba(183, 155, 92, 0.431054) 71.03%,
+      rgba(171, 157, 151, 0) 81.74%
     );
   }
 }

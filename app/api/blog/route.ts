@@ -20,9 +20,9 @@ export async function POST(req: NextRequest) {
     return new Response("", { status: 401 });
   }
   const data = await req.formData();
-  const key = data.get("key") as any as string;
   const image = data.get("image") as any as File;
   const title = data.get("title") as any as string;
+  const key = title.toLowerCase().replaceAll(" ", "-");
   const description = data.get("description") as any as string;
   const content = data.get("content") as any as string;
 
