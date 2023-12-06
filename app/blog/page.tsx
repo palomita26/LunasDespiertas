@@ -19,11 +19,8 @@ export default async function Blog() {
 
       <div>
         {blogs.map((blog) => (
-          <div>
-            <div
-              key={blog.key}
-              className="flex justify-between px-8 py-10 bg-[#AB9D97] my-10 rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto min-h-[250px]"
-            >
+          <div key={blog.key}>
+            <div className="flex justify-between px-8 py-10 bg-[#AB9D97] my-10 rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto min-h-[250px]">
               <div className="flex flex-col justify-between">
                 <h2>{blog.title}</h2>
                 <p className="text-[14px] lg:text-[16px]">
