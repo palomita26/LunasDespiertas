@@ -43,7 +43,7 @@ export default function HamburgerMenu({ isAdmin }: Props) {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="bg-[#9a090e] p-4 text-white rounded-sm text-xl w-[150px]"
+          className="bg-[#9a090e] p-4 text-white rounded-sm text-xl w-[150px] z-20"
           sideOffset={12}
         >
           <DropdownMenu.Item className="py-3 text-center">

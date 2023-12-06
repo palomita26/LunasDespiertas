@@ -63,7 +63,7 @@ model Blog {
   image     String?
   title     String 
   description String
-  content   Json
+  content   String
   isPublished Boolean @default(true)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

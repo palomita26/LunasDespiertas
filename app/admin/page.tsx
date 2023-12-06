@@ -42,7 +42,7 @@ export default function Admin() {
       formData.set("title", data.title);
       formData.set("description", data.description);
       formData.set("image", data.image[0]);
-      formData.set("content", JSON.stringify(content));
+      formData.set("content", content ?? "");
 
       const response = await fetch("/api/blog", {
         method: "POST",
