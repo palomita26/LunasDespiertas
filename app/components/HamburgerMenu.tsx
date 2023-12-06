@@ -1,13 +1,15 @@
 "use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import type { Session } from "next-auth";
 import Link from "next/link";
 
 type Props = {
   isAdmin: boolean;
+  session: Session | null;
 };
 
-export default function HamburgerMenu({ isAdmin }: Props) {
+export default function HamburgerMenu({ isAdmin, session }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -63,6 +65,13 @@ export default function HamburgerMenu({ isAdmin }: Props) {
               <Link href="/admin"> Admin </Link>
             </DropdownMenu.Item>
           ) : null}
+          <DropdownMenu.Item className="py-3 text-center">
+            {session ? (
+              <Link href="/api/auth/signout">Sign-out</Link>
+            ) : (
+              <Link href="/api/auth/signin">Sign-in</Link>
+            )}
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

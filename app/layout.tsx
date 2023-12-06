@@ -62,7 +62,10 @@ export default async function RootLayout({
             </Link>
           </div>
           <div className="lg:hidden flex items-center">
-            <HamburgerMenu isAdmin={Boolean(session?.user.isAdmin)} />
+            <HamburgerMenu
+              isAdmin={Boolean(session?.user.isAdmin)}
+              session={session}
+            />
           </div>
           <div className="hidden lg:flex gap-7 justify-end text-gold text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
             <Link href="/about">about</Link>
