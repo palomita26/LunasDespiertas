@@ -1,10 +1,15 @@
 import { PrismaClient, Blog } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import { Ms_Madi } from "next/font/google";
+import { Ms_Madi, Petit_Formal_Script } from "next/font/google";
 import ShareIcon from "../components/icons/ShareIcon";
 
 const madi = Ms_Madi({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const script = Petit_Formal_Script({
   subsets: ["latin"],
   weight: "400",
 });
@@ -20,13 +25,13 @@ export default async function Blog() {
   return (
     <div>
       <h1
-        className={`text-[#9A090E] text-center tracking-[.4em] text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${madi.className}`}
+        className={`text-[#9A090E] text-center  text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${script.className}`}
       >
         Mente Lunar
       </h1>
-      <h3 className="text-center text-[#9A090E]">
+      <h4 className="text-center text-[#9A090E]">
         Educación divina de tu Madre Lunar, Ana-Maria Colberg
-      </h3>
+      </h4>
 
       <div className="grid md:grid-cols-2 gap-7 p-8">
         {blogs.map((blog) => (
@@ -43,7 +48,9 @@ export default async function Blog() {
                   />
                 ) : null}
               </Link>
-              <h2 className="mt-2">{blog.title}</h2>
+              <h2 className={`mt-2 text-[#9A090E] ${script.className}`}>
+                {blog.title}
+              </h2>
               <div className="flex justify-end w-full">
                 <Link
                   className="bg-[#D1A068] hover:bg-[#E4C7A7] rounded-sm w-[100px] h-[30px] text-center block"

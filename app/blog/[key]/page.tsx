@@ -4,12 +4,17 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeFormat from "rehype-format";
 import remarkGfm from "remark-gfm";
-
+import { Petit_Formal_Script } from "next/font/google";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
 import MDEditor from "@uiw/react-md-editor";
 import Image from "next/image";
 import ShareIcon from "@/app/components/icons/ShareIcon";
+
+const script = Petit_Formal_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default async function BlogPost({
   params,
@@ -35,7 +40,7 @@ export default async function BlogPost({
       <div>
         <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto">
           <div className="flex justify-between w-full">
-            <h2>{blog.title}</h2>
+            <h1 className={`${script.className}`}>{blog.title}</h1>
             <ShareIcon link={`/blog/${blog.key}`} />
           </div>
           {blog.image ? (
@@ -47,7 +52,7 @@ export default async function BlogPost({
               height={400}
             />
           ) : null}
-          <p>{blog.createdAt.toLocaleString()}</p>
+          <p>{blog.createdAt.toLocaleDateString()}</p>
 
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
