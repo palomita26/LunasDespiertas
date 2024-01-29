@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
   const description = data.get("description") as any as string;
   const content = data.get("content") as any as string;
 
+  console.log({ content });
   // await initW3Client();
   // const client = await create();
   const client = new Web3Storage({
