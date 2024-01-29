@@ -53,7 +53,7 @@ export default async function Blog() {
               </h2>
               <div className="flex justify-end w-full">
                 <Link
-                  className="bg-[#D1A068] hover:bg-[#E4C7A7] rounded-sm w-[100px] h-[30px] text-center block"
+                  className="bg-[#DDCFB1] hover:bg-[#F6F2EA] rounded-sm w-[100px] h-[30px] text-center block"
                   href={`/blog/${blog.key}`}
                 >
                   <p className="leading-[30px] align-middle">READ</p>

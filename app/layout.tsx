@@ -35,7 +35,7 @@ export default async function RootLayout({
       <body className={`${libre.className}`}>
         <Toaster />
 
-        <header className="flex navbar-gradient h-[60px] items-center px-5 justify-between sticky top-0 z-50">
+        <header className="flex bg-[#9a090e] h-[60px] items-center px-5 justify-between sticky top-0 z-50">
           <div className="flex items-center">
             <Link href="/">
               <Image
@@ -67,18 +67,18 @@ export default async function RootLayout({
               session={session}
             />
           </div>
-          <div className="hidden lg:flex gap-7 justify-end text-gold text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
+          <div className="hidden lg:flex gap-7 justify-end text-white text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
             <Link href="/about">about</Link>
             <Link href="/services">services</Link>
             <Link href="/blog">blog</Link>
             <Link href="/shop">shop</Link>
             {session?.user.isAdmin ? <Link href="/admin">admin</Link> : null}
             {session ? (
-              <Link className="text-[#3E3A37]" href="/api/auth/signout">
+              <Link className="text-white" href="/api/auth/signout">
                 Sign-out
               </Link>
             ) : (
-              <Link className="text-[#3E3A37]" href="/api/auth/signin">
+              <Link className="text-white" href="/api/auth/signin">
                 Sign-in
               </Link>
             )}

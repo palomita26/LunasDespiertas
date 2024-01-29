@@ -38,7 +38,7 @@ export default async function BlogPost({
   return content ? (
     <div className="pt-10">
       <div>
-        <div className="flex flex-col gap-5 px-8 py-10 bg-[#AB9D97] rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto">
+        <div className="flex flex-col gap-5 px-8 py-10 bg-[#DDCFB1] rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto">
           <div className="flex justify-between w-full">
             <h1 className={`${script.className}`}>{blog.title}</h1>
             <ShareIcon link={`/blog/${blog.key}`} />
