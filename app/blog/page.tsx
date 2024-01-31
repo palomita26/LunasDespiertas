@@ -30,7 +30,7 @@ export default async function Blog() {
   return (
     <div className="py-10 px-8">
       <h1
-        className={`text-[#9A090E] text-center text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${script.className}`}
+        className={`text-[#9A090E] text-center text-shadow shadow-black/25 sm:text-[50px] text-[38px] font-black ${script.className}`}
       >
         Mente Lunar
       </h1>
