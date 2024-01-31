@@ -5,11 +5,13 @@ import { initW3Client } from "@/app/utils/w3StorageUtils";
 import prisma from "../../../prisma/client";
 
 export async function GET(req: NextRequest) {
-  const blog = await prisma.blog.findMany({
+  const blogs = await prisma.blog.findMany({
     orderBy: { createdAt: "desc" },
   });
 
-  return NextResponse.json(blog);
+  console.log({ blogs });
+
+  return NextResponse.json(blogs);
 }
 
 export async function POST(req: NextRequest) {

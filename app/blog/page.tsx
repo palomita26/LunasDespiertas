@@ -45,7 +45,7 @@ export default async function Blog() {
               <Link className="w-full" href={`/blog/${blog.key}`}>
                 {blog.image ? (
                   <Image
-                    className="w-full object-cover"
+                    className="w-full object-cover aspect-video"
                     alt={blog.title}
                     src={blog.image}
                     width={400}
@@ -58,10 +58,10 @@ export default async function Blog() {
               </h2>
               <div className="flex justify-end w-full">
                 <Link
-                  className="bg-[#DDCFB1] hover:bg-[#F6F2EA] rounded-sm w-[100px] h-[30px] text-center block"
+                  className="bg-[#DDCFB1] hover:bg-[#F6F2EA] rounded-sm w-[100px] text-center mt-1.5 block"
                   href={`/blog/${blog.key}`}
                 >
-                  <p className="leading-[30px] align-middle">READ</p>
+                  <p className="leading-[34px] h-[30px] align-middle ">READ</p>
                 </Link>
               </div>
             </div>
