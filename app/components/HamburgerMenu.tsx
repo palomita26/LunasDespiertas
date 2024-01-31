@@ -2,7 +2,14 @@
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import type { Session } from "next-auth";
+import { Josefin_Sans } from "next/font/google";
 import Link from "next/link";
+import { useState } from "react";
+
+const josefin = Josefin_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 type Props = {
   isAdmin: boolean;
@@ -10,8 +17,9 @@ type Props = {
 };
 
 export default function HamburgerMenu({ isAdmin, session }: Props) {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root open={isOpen} onOpenChange={setOpen}>
       <DropdownMenu.Trigger asChild>
         <button className="text-black" aria-label="Customise options">
           <svg
@@ -45,31 +53,63 @@ export default function HamburgerMenu({ isAdmin, session }: Props) {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="bg-[#9a090e] p-4 text-white rounded-sm text-xl w-[150px] z-20"
+          className={`bg-[#9a090e] p-4 text-white rounded-sm text-lg w-[150px] z-20 ${josefin.className}`}
           sideOffset={12}
         >
-          <DropdownMenu.Item className="py-3 text-center">
-            <Link href="/about"> About </Link>
+          <DropdownMenu.Item
+            onClick={() => setOpen(false)}
+            className="py-3 text-center"
+          >
+            <Link href="/about">
+              <p className="tracking-[.1em]">ABOUT</p>{" "}
+            </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-3 text-center">
-            <Link href="/services"> Services </Link>
+          <DropdownMenu.Item
+            onClick={() => setOpen(false)}
+            className="py-3 text-center"
+          >
+            <Link href="/services">
+              <p className="tracking-[.1em]">SERVICES</p>{" "}
+            </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-3 text-center">
-            <Link href="/blog"> Blog </Link>
+          <DropdownMenu.Item
+            onClick={() => setOpen(false)}
+            className="py-3 text-center"
+          >
+            <Link href="/blog">
+              <p className="tracking-[.1em]">BLOG</p>{" "}
+            </Link>
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-3 text-center">
-            <Link href="/shop"> Shop </Link>
+          <DropdownMenu.Item
+            onClick={() => setOpen(false)}
+            className="py-3 text-center"
+          >
+            <Link href="/shop">
+              <p className="tracking-[.1em]">SHOP</p>{" "}
+            </Link>
           </DropdownMenu.Item>
           {isAdmin ? (
-            <DropdownMenu.Item className="py-3 text-center">
-              <Link href="/admin"> Admin </Link>
+            <DropdownMenu.Item
+              onClick={() => setOpen(false)}
+              className="py-3 text-center"
+            >
+              <Link href="/admin">
+                <p className="tracking-[.1em]">ADMIN</p>{" "}
+              </Link>
             </DropdownMenu.Item>
           ) : null}
-          <DropdownMenu.Item className="py-3 text-center">
+          <DropdownMenu.Item
+            onClick={() => setOpen(false)}
+            className="py-3 text-center"
+          >
             {session ? (
-              <Link href="/api/auth/signout">Sign-out</Link>
+              <Link href="/api/auth/signout">
+                <p className="tracking-[.1em]">SIGN-OUT</p>
+              </Link>
             ) : (
-              <Link href="/api/auth/signin">Sign-in</Link>
+              <Link href="/api/auth/signin">
+                <p className="tracking-[.1em]">SIGN-IN</p>
+              </Link>
             )}
           </DropdownMenu.Item>
         </DropdownMenu.Content>

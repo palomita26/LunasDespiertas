@@ -1,7 +1,7 @@
 import { PrismaClient, Blog } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import { Ms_Madi, Petit_Formal_Script } from "next/font/google";
+import { Ms_Madi, Petit_Formal_Script, Josefin_Sans } from "next/font/google";
 import ShareIcon from "../components/icons/ShareIcon";
 
 const madi = Ms_Madi({
@@ -10,6 +10,11 @@ const madi = Ms_Madi({
 });
 
 const script = Petit_Formal_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: "400",
 });
@@ -29,9 +34,9 @@ export default async function Blog() {
       >
         Mente Lunar
       </h1>
-      <h4 className="text-center text-[#9A090E]">
+      <h3 className={`text-center text-[#9A090E] ${josefin.className}`}>
         Educación divina de tu Madre Lunar, Ana-Maria Colberg
-      </h4>
+      </h3>
 
       <div className="grid md:grid-cols-2 gap-7 p-8">
         {blogs.map((blog) => (

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Ms_Madi, Libre_Baskerville } from "next/font/google";
+import {
+  Ms_Madi,
+  Libre_Baskerville,
+  DM_Mono,
+  Josefin_Sans,
+} from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from "./components/HamburgerMenu";
 import Link from "next/link";
@@ -14,6 +19,14 @@ const madi = Ms_Madi({
   weight: "400",
 });
 const libre = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: "400",
+});
+// const mono = DM_Mono({
+//   subsets: ["latin"],
+//   weight: "400",
+// });
+const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: "400",
 });
@@ -67,7 +80,9 @@ export default async function RootLayout({
               session={session}
             />
           </div>
-          <div className="hidden lg:flex gap-7 justify-end text-white text-[12px] uppercase font-bold pt-8 text-shadow shadow-black/25">
+          <div
+            className={`hidden lg:flex gap-7 justify-end text-white text-[14px] tracking-[.1em] uppercase font-bold pt-8 text-shadow shadow-black/25 ${josefin.className}`}
+          >
             <Link href="/about">about</Link>
             <Link href="/services">services</Link>
             <Link href="/blog">blog</Link>
