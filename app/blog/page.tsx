@@ -28,17 +28,19 @@ export default async function Blog() {
   console.log(blogs);
 
   return (
-    <div className="py-10">
+    <div className="py-10 px-8">
       <h1
         className={`text-[#9A090E] text-center text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${script.className}`}
       >
         Mente Lunar
       </h1>
-      <h3 className={`text-center text-[#9A090E] ${josefin.className}`}>
+      <h3
+        className={`text-center text-[#9A090E] text-[18px] sm:text-[20px] ${josefin.className}`}
+      >
         Educación divina de tu Madre Lunar, Ana-Maria Colberg
       </h3>
 
-      <div className="grid md:grid-cols-2 gap-7 p-8">
+      <div className="grid md:grid-cols-2 gap-7 py-8">
         {blogs.map((blog) => (
           <div key={blog.key} className="mb-5 rounded-sm mx-3 w-full mx-auto">
             <div className="flex flex-col items-center">
