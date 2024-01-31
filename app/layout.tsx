@@ -45,7 +45,7 @@ export default async function RootLayout({
   console.log({ session });
   return (
     <html lang="en">
-      <body className={`${libre.className}`}>
+      <body className={`tracking-[.1em] ${josefin.className}`}>
         <Toaster />
 
         <header className="flex bg-[#9a090e] h-[60px] items-center px-5 justify-between sticky top-0 z-50">

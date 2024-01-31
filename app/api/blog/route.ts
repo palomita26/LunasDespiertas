@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
-import { File, Web3Storage } from "web3.storage";
 import { authOptions } from "@/app/utils/nextAuth";
-import { create } from "@web3-storage/w3up-client";
 import { initW3Client } from "@/app/utils/w3StorageUtils";
 import prisma from "../../../prisma/client";
 
@@ -27,12 +25,9 @@ export async function POST(req: NextRequest) {
   const content = data.get("content") as any as string;
 
   console.log({ content });
-  // await initW3Client();
-  // const client = await create();
-  const client = new Web3Storage({
-    token: process.env.WEB3STORAGE_TOKEN as string,
-  });
-  const cid = await client.put([image]);
+  const client = await initW3Client();
+  const cid = await client.uploadDirectory([image]);
+  console.log({ cid });
 
   const httpsLink = `https://${cid.toString()}.ipfs.w3s.link/${image.name}`;
   const blog = await prisma.blog.create({
