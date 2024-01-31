@@ -28,9 +28,9 @@ export default async function Blog() {
   console.log(blogs);
 
   return (
-    <div>
+    <div className="py-10">
       <h1
-        className={`text-[#9A090E] text-center  text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${script.className}`}
+        className={`text-[#9A090E] text-center text-shadow shadow-black/25 sm:text-[50px] text-[40px] font-black ${script.className}`}
       >
         Mente Lunar
       </h1>

@@ -36,12 +36,17 @@ export default async function BlogPost({
       .process(blog.content)
   ).toString();
   return content ? (
-    <div className="pt-10">
+    <div className="py-20 bg-[#DDCFB1]">
       <div>
-        <div className="flex flex-col gap-5 px-8 py-10 bg-[#DDCFB1] rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto">
-          <div className="flex justify-between w-full">
-            <h1 className={`${script.className}`}>{blog.title}</h1>
-            <ShareIcon link={`/blog/${blog.key}`} />
+        <div className="flex flex-col gap-5 px-8 py-10 bg-white rounded-sm mx-3 max-w-full lg:max-w-4xl lg:mx-auto">
+          <div>
+            <div className="flex justify-end">
+              <ShareIcon link={`/blog/${blog.key}`} />
+            </div>
+
+            <div className="flex justify-between w-full">
+              <h1 className={`${script.className}`}>{blog.title}</h1>
+            </div>
           </div>
           {blog.image ? (
             <Image

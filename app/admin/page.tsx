@@ -65,7 +65,7 @@ export default function Admin() {
     }
   };
   return (
-    <div className="p-1 lg:p-5">
+    <div className="py-10 px-1 lg:px-5">
       <p className="text-center">Admin Page</p>
       <form
         onSubmit={handleSubmit(onSubmit)}

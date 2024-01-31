@@ -102,7 +102,7 @@ export default async function RootLayout({
             </Link>
           </div>
         </header>
-        <div className="h-[60px] sticky top-0 z-10 bg-white relative" />
+        {/* <div className="h-[60px] sticky top-0 z-10 bg-white relative" /> */}
 
         {children}
       </body>
