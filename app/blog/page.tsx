@@ -35,12 +35,12 @@ export default async function Blog() {
         Mente Lunar
       </h1>
       <h3
-        className={`text-center text-[#9A090E] text-[18px] sm:text-[20px] ${josefin.className}`}
+        className={`text-center text-[#9A090E] text-[18px] sm:text-[20px]${josefin.className}`}
       >
         Educación divina de tu Madre Lunar, Ana-Maria Colberg
       </h3>
 
-      <div className="grid md:grid-cols-2 gap-7 py-8">
+      <div className="grid md:grid-cols-2 gap-7 py-10">
         {blogs.map((blog) => (
           <div key={blog.key} className="mb-5 rounded-sm mx-3 w-full mx-auto">
             <div className="flex flex-col items-center">
